@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="56a774c0-8780-4f3b-bccf-883323fa74a5" name="Changes" comment="Project started.">
+    <list default="true" id="56a774c0-8780-4f3b-bccf-883323fa74a5" name="Changes" comment="Added pokemon fight if pokemon1 is stronger.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
@@ -63,11 +63,28 @@
       <option name="project" value="LOCAL" />
       <updated>1711915304787</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Project started.">
+      <option name="closed" value="true" />
+      <created>1711916833075</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1711916833075</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Added pokemon fight if pokemon1 is stronger.">
+      <option name="closed" value="true" />
+      <created>1711917216534</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1711917216534</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Project started." />
-    <option name="LAST_COMMIT_MESSAGE" value="Project started." />
+    <MESSAGE value="Added pokemon fight if pokemon1 is stronger." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added pokemon fight if pokemon1 is stronger." />
   </component>
 </project>
