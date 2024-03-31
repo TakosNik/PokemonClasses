@@ -13,7 +13,7 @@ def delay_print(s):
 
 # Class creation
 class Pokemon:
-    def __init__(self, name, types, moves, EVs, health = '====================')
+    def __init__(self, name, types, moves, EVs, health = '===================='):
         #variables as attributes
         self.name = name
         self.types = types
@@ -54,8 +54,14 @@ class Pokemon:
                     string_1_attack = 'Its not very effective...'
                     string_2_attack = 'Its super effective!'
 
-
-
+                # First pokemon is stronger
+                if Pokemon2.types == version[(i+2)%3]:
+                    self.attack *= 2
+                    self.defence *= 2
+                    Pokemon2.attack /= 2
+                    Pokemon2.defence /= 2
+                    string_1_attack = 'Its super effective!'
+                    string_2_attack = 'Its not very effective...'
 
 
 
