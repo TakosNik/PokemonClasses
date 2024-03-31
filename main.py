@@ -21,6 +21,7 @@ class Pokemon:
         self.attack = EVs['ATTACK']
         self.defence = EVs['DEFENCE']
         self.bars = 20 # The amount of hp bars
+        self.health = health
 
     def fight(self, Pokemon2):
         print('----POKEMON BATTLE----')
@@ -33,7 +34,6 @@ class Pokemon:
         print('TYPE/', Pokemon2.types)
         print('DEFENCE/', Pokemon2.defence)
         print('LVL/', 3 * (1 + np.mean([Pokemon2.attack, Pokemon2.defence])))
-        print('\nVS')
 
         time.sleep(2)
 
@@ -42,8 +42,8 @@ class Pokemon:
             if self.types == k:
                 #For same type
                 if Pokemon2.types == k:
-                    string_1_attack = '\nIts not very effective...'
-                    string_2_attack = '\nIts not very effective...'
+                    string_1_attack = '\nIts not very effective...\n'
+                    string_2_attack = '\nIts not very effective...\n'
 
                 # Pokemon2 is stronger
                 if Pokemon2.types == version[(i+1)%3]:
@@ -51,8 +51,8 @@ class Pokemon:
                     Pokemon2.defence *= 2
                     self.attack /= 2
                     self.defence /= 2
-                    string_1_attack = '\nIts not very effective...'
-                    string_2_attack = '\nIts super effective!'
+                    string_1_attack = '\nIts not very effective...\n'
+                    string_2_attack = '\nIts super effective!\n'
 
                 # First pokemon is stronger
                 if Pokemon2.types == version[(i+2)%3]:
@@ -60,8 +60,8 @@ class Pokemon:
                     self.defence *= 2
                     Pokemon2.attack /= 2
                     Pokemon2.defence /= 2
-                    string_1_attack = '\nIts super effective!'
-                    string_2_attack = '\nIts not very effective...'
+                    string_1_attack = '\nIts super effective!\n'
+                    string_2_attack = '\nIts not very effective...\n'
 
         # The fight
         # Proceeds while both pokemon have hp
@@ -71,7 +71,7 @@ class Pokemon:
 
             print(f'Go {self.name}')
             for i, x in enumerate(self.moves):
-                print(f'{i+i}.', x)
+                print(f'{i+1}.', x)
             index = int(input('Pick a move: '))
             delay_print(f'{self.name} used {self.moves[index-1]}!')
             time.sleep(1)
@@ -99,7 +99,7 @@ class Pokemon:
             #Pokemon2 turn
             print(f'Go {Pokemon2.name}')
             for i, x in enumerate(Pokemon2.moves):
-                print(f'{i + i}.', x)
+                print(f'{i + 1}.', x)
             index = int(input('Pick a move: '))
             delay_print(f'{Pokemon2.name} used {self.moves[index - 1]}!')
             time.sleep(1)
@@ -130,17 +130,17 @@ class Pokemon:
 
 if __name__ == '__main__':
     #Create Pokemon
-    Charizard = Pokemon('Charizard', 'Fire', ['Flamethrower', 'Fly', 'Blast Burn', 'Fire Punch'], {'ATTACK':12, 'DEFENSE': 8})
-    Blastoise = Pokemon('Blastoise', 'Water', ['Water Gun', 'Bubblebeam', 'Hydro Pump', 'Surf'],{'ATTACK': 10, 'DEFENSE':10})
-    Venusaur = Pokemon('Venusaur', 'Grass', ['Vine Wip', 'Razor Leaf', 'Earthquake', 'Frenzy Plant'],{'ATTACK':8, 'DEFENSE':12})
+    Charizard = Pokemon('Charizard', 'Fire', ['Flamethrower', 'Fly', 'Blast Burn', 'Fire Punch'], {'ATTACK':12, 'DEFENCE': 8})
+    Blastoise = Pokemon('Blastoise', 'Water', ['Water Gun', 'Bubblebeam', 'Hydro Pump', 'Surf'],{'ATTACK': 10, 'DEFENCE':10})
+    Venusaur = Pokemon('Venusaur', 'Grass', ['Vine Wip', 'Razor Leaf', 'Earthquake', 'Frenzy Plant'],{'ATTACK':8, 'DEFENCE':12})
 
-    Charmander = Pokemon('Charmander', 'Fire', ['Ember', 'Scratch', 'Tackle', 'Fire Punch'],{'ATTACK':4, 'DEFENSE':2})
-    Squirtle = Pokemon('Squirtle', 'Water', ['Bubblebeam', 'Tackle', 'Headbutt', 'Surf'],{'ATTACK': 3, 'DEFENSE':3})
-    Bulbasaur = Pokemon('Bulbasaur', 'Grass', ['Vine Wip', 'Razor Leaf', 'Tackle', 'Leech Seed'],{'ATTACK':2, 'DEFENSE':4})
+    Charmander = Pokemon('Charmander', 'Fire', ['Ember', 'Scratch', 'Tackle', 'Fire Punch'],{'ATTACK':4, 'DEFENCE':2})
+    Squirtle = Pokemon('Squirtle', 'Water', ['Bubblebeam', 'Tackle', 'Headbutt', 'Surf'],{'ATTACK': 3, 'DEFENCE':3})
+    Bulbasaur = Pokemon('Bulbasaur', 'Grass', ['Vine Wip', 'Razor Leaf', 'Tackle', 'Leech Seed'],{'ATTACK':2, 'DEFENCE':4})
 
-    Charmeleon = Pokemon('Charmeleon', 'Fire', ['Ember', 'Scratch', 'Flamethrower', 'Fire Punch'],{'ATTACK':6, 'DEFENSE':5})
-    Wartortle = Pokemon('Wartortle', 'Water', ['Bubblebeam', 'Water Gun', 'Headbutt', 'Surf'],{'ATTACK': 5, 'DEFENSE':5})
-    Ivysaur = Pokemon('Ivysaur\t', 'Grass', ['Vine Wip', 'Razor Leaf', 'Bullet Seed', 'Leech Seed'],{'ATTACK':4, 'DEFENSE':6})
+    Charmeleon = Pokemon('Charmeleon', 'Fire', ['Ember', 'Scratch', 'Flamethrower', 'Fire Punch'],{'ATTACK':6, 'DEFENCE':5})
+    Wartortle = Pokemon('Wartortle', 'Water', ['Bubblebeam', 'Water Gun', 'Headbutt', 'Surf'],{'ATTACK': 5, 'DEFENCE':5})
+    Ivysaur = Pokemon('Ivysaur\t', 'Grass', ['Vine Wip', 'Razor Leaf', 'Bullet Seed', 'Leech Seed'],{'ATTACK':4, 'DEFENCE':6})
 
 
     Charizard.fight(Blastoise) # Get them to fight
