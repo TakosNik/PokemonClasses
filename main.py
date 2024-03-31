@@ -42,8 +42,8 @@ class Pokemon:
             if self.types == k:
                 #For same type
                 if Pokemon2.types == k:
-                    string_1_attack = 'Its not very effective...'
-                    string_2_attack = 'Its not very effective...'
+                    string_1_attack = '\nIts not very effective...'
+                    string_2_attack = '\nIts not very effective...'
 
                 # Pokemon2 is stronger
                 if Pokemon2.types == version[(i+1)%3]:
@@ -51,8 +51,8 @@ class Pokemon:
                     Pokemon2.defence *= 2
                     self.attack /= 2
                     self.defence /= 2
-                    string_1_attack = 'Its not very effective...'
-                    string_2_attack = 'Its super effective!'
+                    string_1_attack = '\nIts not very effective...'
+                    string_2_attack = '\nIts super effective!'
 
                 # First pokemon is stronger
                 if Pokemon2.types == version[(i+2)%3]:
@@ -60,8 +60,8 @@ class Pokemon:
                     self.defence *= 2
                     Pokemon2.attack /= 2
                     Pokemon2.defence /= 2
-                    string_1_attack = 'Its super effective!'
-                    string_2_attack = 'Its not very effective...'
+                    string_1_attack = '\nIts super effective!'
+                    string_2_attack = '\nIts not very effective...'
 
         # The fight
         # Proceeds while both pokemon have hp
@@ -73,7 +73,7 @@ class Pokemon:
             for i, x in enumerate(self.moves):
                 print(f'{i+i}.', x)
             index = int(input('Pick a move: '))
-            delay_print(f'{self.name} used {moves[index-1]}!')
+            delay_print(f'{self.name} used {self.moves[index-1]}!')
             time.sleep(1)
             delay_print(string_1_attack)
 
@@ -101,7 +101,7 @@ class Pokemon:
             for i, x in enumerate(Pokemon2.moves):
                 print(f'{i + i}.', x)
             index = int(input('Pick a move: '))
-            delay_print(f'{Pokemon2.name} used {moves[index - 1]}!')
+            delay_print(f'{Pokemon2.name} used {self.moves[index - 1]}!')
             time.sleep(1)
             delay_print(string_2_attack)
 
@@ -124,7 +124,7 @@ class Pokemon:
                 break
 
         money = np.random.choice(5000)
-        delay_print(f"Opponent paid you ${money}")
+        delay_print(f"\nOpponent paid you ${money}")
 
 
 
